@@ -8,7 +8,7 @@ class Header extends Component {
       <div className="Header">
         <div className="Logo">
           <img src={logo} alt="logo"/>
-          <h2>Hi React!</h2>
+          <h2>B2B Track</h2>
         </div>
       </div>
     );
