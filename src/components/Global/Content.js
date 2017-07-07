@@ -2,10 +2,53 @@ import React, {Component} from 'react'
 import './css/Content.css'
 
 class Content extends Component {
+
+	constructor(props){
+		super(props)
+	
+
+		this.state = {
+			count: 0
+		}
+
+		this.handleCountClick = this.handleCountClick.bind(this)
+	}	
+
+	componentDidMount() {
+		this.setState({
+			count: 1
+		})
+	}
+
+	handleCountClick(e) {
+		if(e.target.id === 'suma'){
+			this.setState({
+				count: this.state.count + 1
+			})
+		}
+
+		if(e.target.id === 'resta' && this.state.count > 0){
+			this.setState({
+				count: this.state.count - 1
+			})
+		}
+
+		if(e.target.id === 'reset'){
+			this.setState({
+				count: 0
+			})
+		}
+
+	}
+	
+
 	render() {
 		return (
 			<div className="Content">
-				<h4>Lorem</h4>
+				<h4>Lorem - Counter: {this.state.count}</h4> 
+				<button id="suma" onClick={this.handleCountClick} > + </button>
+				<button id="resta" onClick={this.handleCountClick} > - </button>
+				<button id="reset" onClick={this.handleCountClick} > Reset </button>
 				<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
                     doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
                     veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
