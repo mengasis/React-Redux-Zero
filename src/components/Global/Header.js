@@ -5,20 +5,23 @@ import PropTypes from 'prop-types'
 
 class Header extends Component {
 
-	static propTypes = {
-		title: PropTypes.string.isRequired
-	};
-
 	render() {
+
+		const title = this.props.title
+
 		return (
 			<div className="Header">
 				<div className="Logo">
 					<img src={logo} alt="logo"/>
-					<h2>B2B Track</h2>
+					<h2>{title}</h2>
 				</div>
 			</div>
 		)
 	}
+}
+
+Header.propTypes = {
+	title: PropTypes.string.isRequired
 }
 
 export default Header

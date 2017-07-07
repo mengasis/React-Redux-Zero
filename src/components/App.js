@@ -9,9 +9,9 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App">
-				<Header />
+				<Header title="B2BTrack" />
 				<Content />
-				<Footer />
+				<Footer copyright="My Copyright ®"/>
 			</div>
 		)
 	}
