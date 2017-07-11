@@ -1,4 +1,6 @@
 import React, {Component} from 'react'
+import PropTypes from 'prop-types'
+
 import './css/Content.css'
 
 class Content extends Component {
@@ -43,9 +45,13 @@ class Content extends Component {
 	
 
 	render() {
+
+		const { body = 'Lorem' } = this.props
+
 		return (
 			<div className="Content">
-				<h4>Lorem - Counter: {this.state.count}</h4> 
+				{body}
+				<h4>Counter: {this.state.count}</h4> 
 				<button id="suma" onClick={this.handleCountClick} > + </button>
 				<button id="resta" onClick={this.handleCountClick} > - </button>
 				<button id="reset" onClick={this.handleCountClick} > Reset </button>
@@ -65,6 +71,10 @@ class Content extends Component {
 			</div>
 		)
 	}
+}
+
+Content.propTypes = {
+	body: PropTypes.object.isRequired
 }
 
 export default Content
